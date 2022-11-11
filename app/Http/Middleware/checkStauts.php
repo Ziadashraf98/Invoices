@@ -17,7 +17,7 @@ class checkStauts
      */
     public function handle(Request $request, Closure $next)
     {
-        if((Auth::user()->status == 'غير مفعل'))
+        if(Auth::user()->status == 'غير مفعل')
         {
             Auth::logout();
             return redirect('/login')->with('error', 'Your Account is suspended, please contact Admin.');
